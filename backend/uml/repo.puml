@@ -1,0 +1,42 @@
+@startuml
+
+' Abstract classes
+
+abstract class AbstractRepository {
+    +abstract findAll(): Promise<AbstractEntity>;
+    +abstract findById(id: number): Promise<AbstractEntity>;
+    -database Database
+}
+
+' Concrete controller classes
+class BookingRepository extends AbstractRepository {
+    +create(...): Promise<BookingDTO>
+    +update(BookingDTO): Promise<BookingDTO>
+    +getAvailableRooms(...): Promise<List<Room>>
+    +getSuggestedTime(...): Promise<object[]>
+}
+
+class BuildingRepository extends AbstractRepository{
+     +create(...): Promise<BuildingDTO>
+     +updateById(building: BuildingDTO): Promise<BuildingDTO>
+}
+
+class EventRepository extends AbstractRepository{
+      +create(...): Promise<EventDTO>;
+      +updateById(event: EventDTO): Promise<EventDTO>;
+      +findByUserId(id: number): Promise<EventDTO>;
+}
+
+class RoomRepository extends AbstractRepository {
+    +create(...): Promise<RoomDTO>;
+    +updateById(room: RoomDTO): Promise<RoomDTO>;
+}
+
+class UserRepository extends AbstractRepository {
+    +findByEmail(email: string): Promise<UserDTO>
+    +create(...): Promise<UserDTO>;
+    +updateById(user: UserDTO): Promise<UserDTO>;
+    +upload(users: UserDTO[]): Promise<UserDTO[]>
+}
+
+@enduml

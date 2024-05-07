@@ -1,0 +1,112 @@
+.rbc-header {
+  background: #dd7832 !important;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  border: 0;
+}
+
+.rbc-event {
+  /* border: 0 !important;
+  border-left: 4px solid #d3b5a9 !important;
+  background-color: #eacec3 !important; */
+  outline: none !important;
+  border-radius: 0;
+  color: black;
+  font-weight: 300;
+  z-index: 50 !important;
+}
+
+.rbc-timeslot-group {
+  min-height: 120px !important;
+}
+
+.rbc-background-event {
+  padding: 0px !important;
+  border-radius: 0px !important;
+  border: none !important;
+  background-color: #f19e38 !important;
+}
+
+.rbc-events-container {
+  margin: 0 !important;
+  width: 100%;
+}
+
+.rbc-event-label {
+  display: none !important;
+}
+.rbc-event-content {
+  font-size: 16px !important;
+  font-weight: 300;
+}
+
+.rbc-calendar {
+  width: 100%;
+}
+
+.rbc-agenda-time-cell {
+  border-left: 1px solid #ddd !important;
+}
+
+.rbc-row-segment {
+  padding: 0px !important;
+}
+
+.rbc-allday-cell {
+  height: 0 !important;
+}
+
+.rbc-day-slot .rbc-event-label {
+  padding: 0px !important;
+}
+
+.rbc-day-slot .rbc-event-content {
+  padding-top: 3px;
+  width: inherit !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px !important;
+}
+
+.rbc-today {
+  background-color: #fcd8a25c;
+}
+
+.rbc-off-range-bg {
+  background-color: #0000000a !important;
+}
+
+.rbc-current-time-indicator {
+  background-color: red;
+}
+
+.rbc-show-more {
+  color: #dd7832;
+}
+
+.rbc-day-bg {
+  position: relative;
+  /* z-index: 5; */
+  transition: background-color 0.2s ease;
+}
+.rbc-day-bg:hover {
+  background-color: #fcd8a25c;
+  cursor: pointer;
+}
+
+.rbc-time-header {
+  border: 0 !important;
+  height: 44px;
+  border-bottom: 1px solid #ddd;
+}
+.rbc-time-content {
+  border: 0;
+  border-top: 1px solid #ddd !important;
+}
+
+.rbc-month-view {
+  border: 0;
+}

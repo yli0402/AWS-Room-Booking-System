@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "AmazonEmber";
+  src: url("../../../public/AmazonEmber_Rg.ttf") format("amazon-ember");
+}
+
+.react-calendar {
+  width: 400px;
+  max-width: 100%;
+  background-color: #fff;
+  color: #222;
+  border-radius: 8px;
+  font-family: "AmazonEmber", Arial, Helvetica, sans-serif;
+  border: 1px solid white;
+  line-height: 1.125em;
+}
+.react-calendar__navigation button {
+  color: #dd7832;
+  background: none;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f8f8fa;
+}
+.react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+}
+abbr[title] {
+  text-decoration: none;
+}
+
+.myCalendar .react-calendar__tile {
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: 2px solid white;
+}
+
+.react-calendar__tile:enabled {
+  background: #ffe6c6;
+  color: #744400;
+  cursor: pointer;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #ffe6c6;
+  color: #744400;
+  opacity: 0.6;
+}
+
+.react-calendar__tile:disabled {
+  background: white;
+  color: gray;
+}
+
+.myCalendar .react-calendar__tile--active {
+  background: #dd7832 !important;
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.myCalendar .react-calendar__tile--active:hover {
+  opacity: 0.6 !important;
+}
+
+.todayTile {
+  box-sizing: border-box;
+  color: #659fdf !important;
+}
+
+@media screen and (max-width: 768px) {
+  .react-calendar {
+    line-height: 0.5em;
+    width: 300px;
+  }
+
+  .myCalendar .react-calendar__tile {
+    border: 1px solid white;
+  }
+
+  .react-calendar__navigation button {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+}

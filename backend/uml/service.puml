@@ -1,0 +1,39 @@
+@startuml
+
+' Abstract classes
+
+abstract class AbstractService {
+    +abstract getAll(): List<AbstractDTO>;
+    +abstract getById(id: number): AbstractDTO;
+    +abstract create(dto: AbstractDTO): AbstractDTO;
+    +abstract update(id: number, dto: AbstractDTO): AbstractDTO;
+    +protected async validateIncomingDTO(dto: AbstractDTO, validatorOptions: ValidatorOptions | undefined = undefined)
+    +protected getValidationErrorMessages(validationErrors: ValidationError[]): string[]
+    +protected validateId(id: number, entity: string)
+    +protected toKnownErrors(error: PrismaClientKnownRequestError,entity: string, uniqueConstraint: string,foreignEntity: string)
+    -abstractRepository AbstractRepository;
+}
+
+' Concrete controller classes
+class BookingService extends AbstractService {
+    +getAvailableRooms(dto: BookingDTO): Promise<object>
+    +getSuggestedTimes(dto: BookingDTO): Promise<object>
+    +handlePrismaError(error: unknown)
+}
+
+class BuildingService extends AbstractService {
+}
+
+class EventService extends AbstractService {
+    +getAllByCurrentUser(userId: number): Promise<EventDTO>
+    +delete(id: number, dto: EventDTO): Promise<EventDTO>
+}
+
+class RoomService extends AbstractService {
+}
+
+class UserRepository extends AbstractService {
+    +getByEmail(email: string): UserDTO
+}
+
+@enduml
